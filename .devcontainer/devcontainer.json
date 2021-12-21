@@ -1,5 +1,5 @@
 {
-	"name": "Codespaces Rust Starter",
+	"name": "Solana Dev Env",
 	"extensions": [
 		"cschleiden.vscode-github-actions",
 		"ms-vsliveshare.vsliveshare",

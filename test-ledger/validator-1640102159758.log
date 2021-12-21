@@ -1,0 +1,36 @@
+[0m[38;5;8m[[0m2021-12-21T15:55:59.787369400Z [0m[32mINFO [0m solana_test_validator[0m[38;5;8m][0m solana-validator 1.8.2 (src:42a2c292; feat:52865992)
+[0m[38;5;8m[[0m2021-12-21T15:55:59.788355200Z [0m[32mINFO [0m solana_test_validator[0m[38;5;8m][0m Starting validator with: ArgsOs {
+        inner: [
+            "solana-test-validator",
+        ],
+    }
+[0m[38;5;8m[[0m2021-12-21T15:55:59.792494400Z [0m[33mWARN [0m solana_perf[0m[38;5;8m][0m CUDA is disabled
+[0m[38;5;8m[[0m2021-12-21T15:55:59.793533900Z [0m[32mINFO [0m solana_perf[0m[38;5;8m][0m AVX detected
+[0m[38;5;8m[[0m2021-12-21T15:55:59.794108300Z [0m[32mINFO [0m solana_perf[0m[38;5;8m][0m AVX2 detected
+[0m[38;5;8m[[0m2021-12-21T15:55:59.959443800Z [0m[32mINFO [0m solana_faucet::faucet[0m[38;5;8m][0m Faucet started. Listening on: 0.0.0.0:9900
+[0m[38;5;8m[[0m2021-12-21T15:55:59.960437600Z [0m[32mINFO [0m solana_faucet::faucet[0m[38;5;8m][0m Faucet account address: EEgxhCC8jYyFe4QSXcXmA7KkL8Y38viZLymsVdwVxLya
+[0m[38;5;8m[[0m2021-12-21T15:56:00.196489600Z [0m[33mWARN [0m solana_core::validator[0m[38;5;8m][0m identity: AckGF3Ah6UAhVLV3PjenVv3qSnDotGPqveYAuMkNF4qX
+[0m[38;5;8m[[0m2021-12-21T15:56:00.196713100Z [0m[33mWARN [0m solana_core::validator[0m[38;5;8m][0m vote account: 3Zi5FUPu2aY8HmRos1mEqMsSH1AXGx6zsfn8uzP3JLGa
+[0m[38;5;8m[[0m2021-12-21T15:56:00.197695600Z [0m[33mWARN [0m solana_core::validator[0m[38;5;8m][0m authorized voter: 3Zi5FUPu2aY8HmRos1mEqMsSH1AXGx6zsfn8uzP3JLGa
+[0m[38;5;8m[[0m2021-12-21T15:56:00.197947500Z [0m[32mINFO [0m solana_core::validator[0m[38;5;8m][0m Initializing sigverify...
+[0m[38;5;8m[[0m2021-12-21T15:56:00.198169600Z [0m[32mINFO [0m solana_core::validator[0m[38;5;8m][0m Done.
+[0m[38;5;8m[[0m2021-12-21T15:56:00.198798900Z [0m[32mINFO [0m solana_core::validator[0m[38;5;8m][0m Cleaning accounts paths..
+[0m[38;5;8m[[0m2021-12-21T15:56:00.579109800Z [0m[32mINFO [0m solana_core::validator[0m[38;5;8m][0m done. clean_accounts_paths took 380ms
+[0m[38;5;8m[[0m2021-12-21T15:56:00.579388300Z [0m[32mINFO [0m solana_core::validator[0m[38;5;8m][0m loading ledger from "test-ledger"...
+[0m[38;5;8m[[0m2021-12-21T15:56:00.597106700Z [0m[32mINFO [0m solana_core::validator[0m[38;5;8m][0m genesis hash: 2e2P4wsmVAsc5Z5sJuj6TA85fVwH4RKhfosypeUpBzvA
+[0m[38;5;8m[[0m2021-12-21T15:56:00.600347300Z [0m[32mINFO [0m solana_ledger::blockstore[0m[38;5;8m][0m Maximum open file descriptors: 1048576
+[0m[38;5;8m[[0m2021-12-21T15:56:00.600715000Z [0m[32mINFO [0m solana_ledger::blockstore[0m[38;5;8m][0m Opening database at "test-ledger/rocksdb"
+thread 'main' panicked at 'Failed to open ledger database: RocksDb(Error { message: "Corruption: CURRENT file corrupted" })', core/src/validator.rs:1167:6
+stack backtrace:
+   0: rust_begin_unwind
+             at /rustc/9bc8c42bb2f19e745a63f3445f1ac248fb015e53/library/std/src/panicking.rs:493:5
+   1: core::panicking::panic_fmt
+             at /rustc/9bc8c42bb2f19e745a63f3445f1ac248fb015e53/library/core/src/panicking.rs:92:14
+   2: core::option::expect_none_failed
+             at /rustc/9bc8c42bb2f19e745a63f3445f1ac248fb015e53/library/core/src/option.rs:1329:5
+   3: solana_core::validator::new_banks_from_ledger
+   4: solana_core::validator::Validator::new
+   5: solana_core::test_validator::TestValidator::start
+   6: solana_core::test_validator::TestValidatorGenesis::start_with_mint_address
+   7: solana_test_validator::main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
